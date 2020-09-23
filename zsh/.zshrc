@@ -53,7 +53,11 @@ antibody bundle romkatv/powerlevel10k
 #antibody bundle sindresorhus/pure
 
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
