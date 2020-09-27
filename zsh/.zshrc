@@ -52,7 +52,11 @@ antibody bundle romkatv/powerlevel10k
 #antibody bundle mafredri/zsh-async
 #antibody bundle sindresorhus/pure
 
+alias vim='nvim'
+
 . $HOME/.asdf/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
+
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
