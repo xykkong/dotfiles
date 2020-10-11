@@ -75,6 +75,7 @@ set colorcolumn=80                    "Use a color column on the 80-character ma
 set clipboard=unnamed                 "Set clipboard to use unnamed register
 set list listchars=tab:\ \ ,trail:·   "Display tabs and trailing spaces visually
 set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
+set cpoptions+=$					" put a '$' at the end of the changed text
 
 colorscheme sonokai
 set background=dark
@@ -154,10 +155,59 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims=1     "Add a space before and after delimeters
 
 
-" Ack
+" #############################################
+"  Ack
+" #############################################
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+
+" Terminal Function
+"let g:term_buf = 0
+"let g:term_win = 0
+"function! TermToggle(height)
+"    if win_gotoid(g:term_win)
+"        hide
+"    else
+"        botright new
+"        exec "resize " . a:height
+"        try
+"            exec "buffer " . g:term_buf
+"        catch
+"            call termopen($SHELL, {"detach": 0})
+"            let g:term_buf = bufnr("")
+"            set nonumber
+"            set norelativenumber
+"            set signcolumn=no
+"        endtry
+"        startinsert!
+"        let g:term_win = win_getid()
+"    endif
+"endfunction
+"
+"" Toggle terminal on/off (neovim)
+"nnoremap <A-t> :call TermToggle(12)<CR>
+"inoremap <A-t> <Esc>:call TermToggle(12)<CR>
+"tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
+"
+"" Terminal go back to normal mode
+"tnoremap <Esc> <C-\><C-n>
+"tnoremap :q! <C-\><C-n>:q!<CR>
+
+" #############################################
+"  NEOTERM
+" #############################################
+
+"nnoremap <Leader>ro :Topen<CR>
+"nnoremap <Leader>rk :call neoterm#close()<CR>
+"nnoremap <Leader>rc :call neoterm#clear()<CR>
+"nnoremap <Leader>rr :call neoterm#clear() \| call neoterm#exec(['!!', '', ''])<CR>
+"
+"let g:neoterm_autoscroll = 1
+"let g:neoterm_size = 10
+"let g:neoterm_keep_term_open = 1
+"let g:neoterm_test_status_format = 1
 
 "Vim-workspace
 let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
