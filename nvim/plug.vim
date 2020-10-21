@@ -62,8 +62,8 @@ Plug 'airblade/vim-gitgutter'     "Shows a git diff sign in the line
 Plug 'itchyny/vim-gitbranch'      "Show current branch
 
 "Terminal 
-Plug 'kassio/neoterm'
-"Plug 'benmills/vimux'
+"Plug 'kassio/neoterm'
+Plug 'benmills/vimux'
 "Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
