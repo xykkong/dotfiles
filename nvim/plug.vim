@@ -63,7 +63,8 @@ Plug 'itchyny/vim-gitbranch'      "Show current branch
 
 "Terminal 
 "Plug 'kassio/neoterm'
-Plug 'benmills/vimux'
+"Plug 'benmills/vimux'
+Plug 'hkupty/nvimux'
 "Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()

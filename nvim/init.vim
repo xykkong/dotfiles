@@ -20,10 +20,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab       "expand tab in spaces
 
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
 
 "" ================ Scrolling ========================
 set scrolloff=8                 "Show x lines after scroll
@@ -150,7 +146,6 @@ let g:go_addtags_transform = "camelcase"
 
 
 " Nerd tree
-map <C-n> :NERDTreeToggle<CR>
 "let NERDTreeShowHidden=1    "Show hidden files
 let g:NERDSpaceDelims=1     "Add a space before and after delimeters
 
@@ -175,11 +170,17 @@ endif
 "vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
 "nnoremap <A-t> :Ttoggle<CR>
 
-let g:VimuxOrientation = "h"
-let g:VimuxUseNearest = 0
-let g:VimuxRunnerType = "window"
+"let g:VimuxOrientation = "h"
+"let g:VimuxUseNearest = 0
+"let g:VimuxRunnerType = "window"
 
-
+"let g:nvimux_prefix = "<C-a>",
+"let g:nvimux_open_term_by_default = true,
+"let g:nvimux_new_window_buffer = "single",
+"let g:nvimux_quickterm_direction = "botright",
+"let g:nvimux_quickterm_orientation = "vertical"',
+"let g:nvimux_quickterm_scope = "t",
+"let g:nvimux_quickterm_size = "80",
 
 "Vim-workspace
 let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
