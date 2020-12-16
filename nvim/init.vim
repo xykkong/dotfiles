@@ -22,7 +22,8 @@ set expandtab       "expand tab in spaces
 
 
 "" ================ Scrolling ========================
-set scrolloff=8                 "Show x lines after scroll
+set scrolloff=3                 " Show x lines after scroll
+set scrolljump=5                " Line to scroll when cursor leaves screen
 set sidescrolloff=15
 
 
@@ -67,8 +68,10 @@ set number                            "Show line numbers on the sidebar
 "set relativenumber                   "Show the line number relative to the line with the cursor
 set showmatch                         "Show matching brackets
 set nowrap                            "Don't wrap lines
+set report=0                          "Always report changed lines
 set colorcolumn=80                    "Use a color column on the 80-character mark
 set clipboard=unnamed                 "Set clipboard to use unnamed register
+"set clipboard=unnamedplus,unnamed
 set list listchars=tab:\ \ ,trail:·   "Display tabs and trailing spaces visually
 set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
 set cpoptions+=$					" put a '$' at the end of the changed text
@@ -143,7 +146,27 @@ let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_addtags_transform = "camelcase"
+let g:go_fmt_autosave = 1             " Enable auto formatting on saving
+let g:go_fmt_command = "goimports"    " Run `goimports` on your current file on every save
+" Status line types/signatures
+let g:go_auto_type_info = 1
 
+
+" Run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+" Map keys for most used commands.
+" Ex: `\b` for building, `\r` for running and `\b` for running test.
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 " Nerd tree
 "let NERDTreeShowHidden=1    "Show hidden files
@@ -164,7 +187,7 @@ endif
 
 "let g:neoterm_default_mod='belowright'  " open terminal in bottom split
 "let g:neoterm_size=16                   " terminal split size
-""let g:neoterm_autoscroll=1              " scroll to the bottom when running a command
+"let g:neoterm_autoscroll=1              " scroll to the bottom when running a command
 "let g:neoterm_autoinsert=1              " start in insert mode
 "nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
 "vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection

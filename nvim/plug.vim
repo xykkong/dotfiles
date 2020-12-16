@@ -61,7 +61,7 @@ Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'     "Shows a git diff sign in the line
 Plug 'itchyny/vim-gitbranch'      "Show current branch
 
-"Terminal 
+"Terminal
 "Plug 'kassio/neoterm'
 "Plug 'benmills/vimux'
 Plug 'hkupty/nvimux'
