@@ -53,6 +53,7 @@ antibody bundle romkatv/powerlevel10k
 #antibody bundle sindresorhus/pure
 
 alias vim='nvim'
+alias oldvim="\vim"
 
 . $HOME/.asdf/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh

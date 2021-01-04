@@ -18,7 +18,7 @@ Plug 'preservim/nerdcommenter'
 "Save workspaces
 Plug 'thaerkh/vim-workspace'
 
-"Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 "Auto-complete parenthesis and other brackets
 Plug 'jiangmiao/auto-pairs'

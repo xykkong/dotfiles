@@ -16,9 +16,9 @@ filetype plugin indent on
 
 
 "" ================ Indentation =====================
-set tabstop=2
-set shiftwidth=2
-set expandtab       "expand tab in spaces
+set tabstop=2       " number of visual spaces per TAB
+set shiftwidth=2    " number of spaces in tab when editing
+set expandtab       " expand tab in spaces
 
 
 "" ================ Scrolling ========================
@@ -74,7 +74,8 @@ set clipboard=unnamed                 "Set clipboard to use unnamed register
 "set clipboard=unnamedplus,unnamed
 set list listchars=tab:\ \ ,trail:·   "Display tabs and trailing spaces visually
 set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
-set cpoptions+=$					" put a '$' at the end of the changed text
+set cpoptions+=$					  "put a '$' at the end of the changed text
+set mouse=a                           "enable mouse support
 
 colorscheme sonokai
 set background=dark
@@ -91,120 +92,8 @@ if filereadable(expand("~/.config/nvim/maps.vim"))
 endif
 
 
-
-" =============== Plugin Configuration ===============
-"Available values: `'default'`, `'atlantis'`, `'andromeda'`, `'shusia'`, `'maia'`
-let g:sonokai_style = 'atlantis'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-
-
-"Lightline
-let g:lightline = {
-      \ 'colorscheme': 'sonokai',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
-
-
-"Ale
-" Set this variable to 1 to fix files when you save them.
-let g:ale_fixers = {
-      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \   'css': ['prettier', 'stylelint'],
-      \   'javascript': ['eslint', 'prettier'],
-      \   'python': ['isort', 'black'],
-      \   'HTML': ['HTMLHint', 'proselint'],
-      \   'ruby': ['rubocop'],
-      \   'go': ['gofmt', 'goimports'],
-      \}
-
- let g:ale_linters = {
-             \ 'go': ['staticcheck'],
-             \ 'ruby': ['solargraph'],
-             \}
-let g:ale_fix_on_save = 1
-
-"Go
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_function_parameters = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_types = 1
-let g:go_hightlight_fields = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_addtags_transform = "camelcase"
-let g:go_fmt_autosave = 1             " Enable auto formatting on saving
-let g:go_fmt_command = "goimports"    " Run `goimports` on your current file on every save
-" Status line types/signatures
-let g:go_auto_type_info = 1
-
-
-" Run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
-
-" Map keys for most used commands.
-" Ex: `\b` for building, `\r` for running and `\b` for running test.
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-
-" Nerd tree
-"let NERDTreeShowHidden=1    "Show hidden files
-let g:NERDSpaceDelims=1     "Add a space before and after delimeters
-
-
-" #############################################
-"  Ack
-" #############################################
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+" =============== Plugins Configuration ===============
+" Load plugins configuration in plugins_conf.vim
+if filereadable(expand("~/.config/nvim/plugins_conf.vim"))
+  source ~/.config/nvim/plugins_conf.vim
 endif
-
-
-" #############################################
-"  NEOTERM
-" #############################################
-
-"let g:neoterm_default_mod='belowright'  " open terminal in bottom split
-"let g:neoterm_size=16                   " terminal split size
-"let g:neoterm_autoscroll=1              " scroll to the bottom when running a command
-"let g:neoterm_autoinsert=1              " start in insert mode
-"nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
-"vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
-"nnoremap <A-t> :Ttoggle<CR>
-
-"let g:VimuxOrientation = "h"
-"let g:VimuxUseNearest = 0
-"let g:VimuxRunnerType = "window"
-
-"let g:nvimux_prefix = "<C-a>",
-"let g:nvimux_open_term_by_default = true,
-"let g:nvimux_new_window_buffer = "single",
-"let g:nvimux_quickterm_direction = "botright",
-"let g:nvimux_quickterm_orientation = "vertical"',
-"let g:nvimux_quickterm_scope = "t",
-"let g:nvimux_quickterm_size = "80",
-
-"Vim-workspace
-let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
-nnoremap <leader>s :ToggleWorkspace<CR>
