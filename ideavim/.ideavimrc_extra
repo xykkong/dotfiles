@@ -1,0 +1,236 @@
+" https://youtrack.jetbrains.com/issue/VIM-1970 
+set set highlightedyank
+
+" https://youtrack.jetbrains.com/issue/VIM-959
+set ideamarks
+
+" Use Idea to join lines smartly 
+" https://github.com/JetBrains/ideavim/wiki/%60ideajoin%60-examples
+set ideajoin
+
+" https://youtrack.jetbrains.com/issue/VIM-1521
+set commentary
+
+" dia daa cia caa
+set argtextobj
+
+" die dae cie cae
+set textobj-entire
+
+ " Multiple cursors support                                                      
+ set multiple-cursors 
+
+" https://github.com/JetBrains/ideavim/wiki/Select-mode
+" set selectmode-=template
+
+set surround
+
+noremap <Esc> <nop>
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+nnoremap <C-j> :m +1<CR>
+nnoremap <C-k> :m -2<CR>
+inoremap <C-j> <Esc>:m +1<CR>gi
+inoremap <C-k> <Esc>:m -2<CR>gi
+
+" system clipboard
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+" scrolling
+nmap <leader>d <C-d>
+nmap <leader>u <C-u>
+vmap <leader>d <C-d>
+vmap <leader>u <C-u>
+
+nmap <leader>h :action PreviousTab<CR>
+nmap <leader>l :action NextTab<CR>
+nmap <leader>bd :action CloseEditor<CR>
+nnoremap <leader><leader> <C-Tab>
+
+
+" easy system clipboard copy/paste
+noremap <space>y "*y
+noremap <space>Y "*Y
+noremap <space>p "*p
+noremap <space>P "*P
+
+" easy window navigation
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+nnoremap <c-s-tab> gT
+nnoremap <c-tab> gt
+
+
+
+" built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
+
+" Use Q for formatting the current paragraph (or visual selection)
+vmap Q gq
+nmap Q gqap
+
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
+" Closing tabs
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+
+" To navigate between split panes
+nmap <leader>wo :action NextSplitter<cr>
+nmap <leader>wp :action PrevSplitter<cr>
+nmap <leader>j :action PrevSplitter<cr>
+
+" Splits manipulation
+nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
+nmap <leader><leader> :action VimFilePrevious<cr>
+
+
+" Navigation
+nmap <leader>M :action ActivateStructureToolWindow<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>p :action JumpToLastWindow<cr>
+" nmap <leader>a :action Switcher<cr>
+
+
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+
+
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+
+" IdeaVim uses 'a' for alt instead of Vim's 'm'
+nmap <a-j> 15gj
+nmap <a-k> 15gk
+
+" Won't work in visual mode (with vmap) for some reason.
+" Use default map of <c-/> for that.
+nmap gcc :action CommentByLineComment<cr>
+
+" unimpaired mappings - from https://github.com/saaguero/ideavimrc/blob/master/.ideavimrc
+nnoremap [<space> O<esc>j
+nnoremap ]<space> o<esc>k
+
+
+" Search
+nmap <leader>/ :action Find<cr>
+nmap <leader>\ :action FindInPath<cr>
+
+" Moving lines
+nmap [e :action MoveLineUp<cr>
+nmap ]e :action MoveLneDown<cr>
+" Moving statements
+nmap [s :action MoveStatementUp<cr>
+nmap ]s :action MoveStatementDown<cr>
+
+" built in search looks better
+nnoremap / :action Find<cr>
+" but preserve ideavim search
+nnoremap g/ /
+
+
+
+
+---- Desnecessario
+" Splits manipulation
+nmap <leader>ws :action SplitHorizontally<cr>
+nmap <leader>wv :action SplitVertically<cr>
+nmap <leader>wc :action Unsplit<cr>
+nmap <leader>wC :action UnsplitAll<cr>
+nmap <leader>rI :action OptimizeImports<cr>
+nmap <leader>rg :action Generate<cr>
+nmap <leader>rr :action RenameElement<cr>
+
+" Tabs
+nnoremap [b :action PreviousTab<cr>
+nnoremap ]b :action NextTab<cr>
+
+
+" Errors
+nmap <leader>x :action GotoNextError<cr>
+nmap <leader>X :action GotoPreviousError<cr>
+
+
+" Navigation
+nmap <leader>h :action Back<cr>
+nmap <leader>l :action Forward<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+nmap <leader>I :action SelectIn<cr>
+nmap <leader>g :action GotoDeclaration<cr>
+nmap <leader>i :action GotoImplementation<cr>
+nnoremap <space>[ :action GotoSuperMethod<cr>
+nmap <leader>t :action GotoTest<cr>
+nnoremap [q :action PreviousOccurence<cr>
+nnoremap ]q :action NextOccurence<cr>
+nmap <leader>b :action ShowBookmarks<cr>
+
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>e :action RecentFiles<cr>
+nmap <leader>L :action RecentLocations<cr>
+nmap <leader>a :action RecentChangedFiles<cr>
+
+nmap <leader>; :action FileStructurePopup<cr>
+
+" Building, Running and Debugging
+nmap ,c :action CompileDirty<cr>
+nmap ,r :action Run<cr>
+nmap ,R :action RunAnything<cr>
+nmap ,c :action RunClass<cr>
+nmap ,b :action Debug<cr>
+nmap ,d :action DebugClass<cr>
+nmap ,t :action RerunTests<cr>
+nmap ,T :action RerunFailedTests<cr>
+
+
+" Inspection
+nmap <leader>rc :action InspectCode<cr>
+
+
+" clear the search buffer when hitting return
+nnoremap <space><cr> :nohlsearch<cr>
+
+" options
+nnoremap cow :action EditorToggleUseSoftWraps<cr>
+nnoremap col :action EditorToggleShowWhitespaces<cr>
+
+" actions
+nnoremap <space>\ :action VimFilePrevious<cr>
+nnoremap <space>e :action SearchEverywhere<cr>
+nnoremap <space>a :action GotoAction<cr>
+nnoremap <space>b :action ToggleLineBreakpoint<cr>
+
+" code navigation
+
+nnoremap <space>k :action HighlightUsagesInFile<cr>
+nnoremap \c :action CheckStyleCurrentFileAction<cr>
+
+
+" The default C-o and C-i behaviours have certain inconsistencies with
+" Vim which I can't quite pinpoint.
+" I'm using the default IntelliJ behaviours instead.
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+nnoremap g; :action JumpToLastChange<CR>
+nnoremap g, :action JumpToNextChange<CR>

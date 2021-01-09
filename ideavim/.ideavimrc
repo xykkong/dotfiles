@@ -1,0 +1,178 @@
+" Show current vim mode
+set showmode
+
+" Use the clipboard register '*' for all yank, delete, change and put operations
+" which would normally go to the unnamed register.
+set clipboard+=unnamed
+
+" Search as characters are entered
+set incsearch
+
+" Highlight search results
+set hlsearch
+
+" If a pattern contains an uppercase letter, searching is case sensitive,
+" otherwise, it is not.
+set ignorecase
+set smartcase
+
+set history=1000
+set scrolloff=5           " lines above/below cursor when scrolling
+set sidescrolloff=10
+set visualbell
+set undolevels=1000
+
+"keep the mode that was enabled before starting a refactoring
+set idearefactormode=keep
+
+" Emulate vim-surround. Commands: ys, cs, ds, S.
+set surround
+
+
+" <SPC> as the leader key
+let mapleader = " "
+" let maplocalleader = ","
+
+" keep selection when indenting text
+vnoremap < <gv
+vnoremap > >gv
+
+" emacs-like editing in insert mode
+inoremap <C-a> <Home>
+inoremap <C-b> <Left>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-k> <Esc>lDa
+
+" Jump to previously visited location
+nnoremap <c-i>    :action Forward<CR>
+
+" Jump to lately visited location
+nnoremap <c-o>    :action Back<CR>
+
+"nmap <c-a> ^
+"nmap <c-e> $
+"vmap <c-a> ^
+"vmap <c-e> $
+"imap <c-e> <Esc>A
+"imap <c-a> <Esc>I
+
+"cnoremap <C-a> <Home>
+"cnoremap <C-e> <End>
+"cnoremap <C-b> <Left>
+"cnoremap <C-f> <Right>
+
+
+" These shortcuts mimic the default Idea action
+"map <C-h> :action TypeHierarchy<CR>
+" Same as default IDEA action, but only in insert mode. Enter block-visual
+" mode in normal mode.
+imap <C-v> <Esc>:action $Paste<CR>
+
+
+" Go to declaration
+nnoremap <leader>gd    :action GotoDeclaration<CR>
+vnoremap <leader>gd    <Esc>:action GotoDeclaration<CR>
+
+" Go to implementation
+nnoremap <leader>gi    :action GotoImplementation<CR>
+vnoremap <leader>gi    <Esc>:action GotoImplementation<CR>
+
+" Go to type declaration
+nnoremap <leader>gt    :action GotoTypeDeclaration<CR>
+vnoremap <leader>gt    <Esc>:action GotoTypeDeclaration<CR>
+
+" Go to code block start
+nnoremap <leader>mg[    :action EditorCodeBlockStart<CR>
+vnoremap <leader>mg[    <Esc>:action EditorCodeBlockStart<CR>
+
+" Go to code block end
+nnoremap <leader>mg]    :action EditorCodeBlockEnd<CR>
+vnoremap <leader>mg]    <Esc>:action EditorCodeBlockEnd<CR>
+
+" Rename symbol
+nnoremap <leader>re    :action RenameElement<CR>
+vnoremap <leader>re    :action RenameElement<CR>
+
+" Search in project. Unfortunately <leader>/ does not work.
+nnoremap <leader>sp    :action FindInPath<CR>
+vnoremap <leader>sp    :action FindInPath<CR>
+
+" Reformat whole buffer
+nnoremap <leader>rc    :action ReformatCode<CR>
+
+" Reformat selected lines
+vnoremap <leader>rc    :action ReformatCode<CR>
+
+" Call hierarchy
+nnoremap <leader>ch      :action CallHierarchy<CR>
+vnoremap <leader>ch      <Esc>:action CallHierarchy<CR>
+
+" Method hierarchy
+nnoremap <leader>mh      :action MethodHierarchy<CR>
+vnoremap <leader>mh      <Esc>:action MethodHierarchy<CR>
+
+
+" Show implementation
+nnoremap <leader>mhH      :action QuickImplementations<CR>
+vnoremap <leader>mhH      <Esc>:action QuickImplementations<CR>
+
+" Show documetation
+nnoremap <leader>mhh      :action QuickJavaDoc<CR>
+vnoremap <leader>mhh      <Esc>:action QuickJavaDoc<CR>
+
+" Inheritance hierarchy
+nnoremap <leader>th      :action TypeHierarchy<CR>
+vnoremap <leader>th      <Esc>:action TypeHierarchy<CR>
+
+" Type Definition
+nnoremap <leader>mht      :action QuickTypeDefinition<CR>
+vnoremap <leader>mht      :action QuickTypeDefinition<CR>
+
+" Show usages for symbol
+nnoremap <leader>su      :action ShowUsages<CR>
+vnoremap <leader>su      :action ShowUsages<CR>
+
+" Find usages for symbol
+nnoremap <leader>fu      :action FindUsages<CR>
+vnoremap <leader>fu      :action FindUsages<CR>
+
+" Code cleanup
+nnoremap <leader>cc      :action CodeCleanup<CR>
+vnoremap <leader>cc      :action CodeCleanup<CR>
+
+" Create constructor
+nnoremap <leader>gc      :action GenerateConstructor<CR>
+vnoremap <leader>gc      <Esc>:action GenerateConstructor<CR>
+
+" Extract method
+nnoremap <leader>em    :action ExtractMethod<CR>
+vnoremap <leader>em    <Esc>:action ExtractMethod<CR>
+
+" Extract superclass
+nnoremap <leader>es    :action ExtractSuperclass<CR>
+vnoremap <leader>es    <Esc>:action ExtractSuperclass<CR>
+
+" Generate getter and setter
+nnoremap <leader>ggs      :action GenerateGetterAndSetter<CR>
+vnoremap <leader>ggs     <Esc>:action GenerateGetterAndSetter<CR>
+
+" Select what to generate
+nnoremap <leader>g      :action Generate<CR>
+vnoremap <leader>g      <Esc>:action Generate<CR>
+
+" Implement Methods
+nnoremap <leader>mrI      :action ImplementMethods<CR>
+vnoremap <leader>mrI      <Esc>:action ImplementMethods<CR>
+
+" Optimize imports
+nnoremap <leader>oi      :action OptimizeImports<CR>
+vnoremap <leader>oi      <Esc>:action OptimizeImports<CR>
+
+" Choose a refactoring action
+nnoremap <leader>mrR      :action Refactorings.QuickListPopupAction<CR>
+vnoremap <leader>mrR      <Esc>:action Refactorings.QuickListPopupAction<CR>
+
+" Open terminal in project root
+nnoremap <leader>'    :action ActivateTerminalToolWindow<CR>
+vnoremap <leader>'    <Esc>:action ActivateTerminalToolWindow<CR>
