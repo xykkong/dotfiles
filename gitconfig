@@ -1,0 +1,7 @@
+[user]
+	email = xyk.kong@gmail.com
+	name = Xiao
+[core]
+	excludesfile = /home/xiao/.gitexcludes
+  # I have no idea why the python3 feature is broken when committing with vim
+  editor       = nvim
