@@ -66,5 +66,6 @@ Plug 'itchyny/vim-gitbranch'      "Show current branch
 "Plug 'benmills/vimux'
 Plug 'hkupty/nvimux'
 "Plug 'christoomey/vim-tmux-navigator'
+Plug 'caenrique/nvim-toggle-terminal'
 
 call plug#end()

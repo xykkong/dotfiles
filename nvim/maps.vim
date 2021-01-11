@@ -2,7 +2,7 @@
 """""""""""" REMAPS """""""""""""""
 """""""""""""""""""""""""""""""""""
 " Change leader instead of backslash. That means all \x commands turn into 'x
-let mapleader=","
+let mapleader=" "
 
 " Use ,, to switch between buffers
 "nnoremap <leader><leader> :b#<CR>
@@ -58,13 +58,11 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Delete>
 
-
-" Open shell in vim
-if has('nvim') || has('terminal')
-  map <Leader>' :terminal<CR>
-else
-  map <Leader>' :shell<CR>
-endif
+" Terminal
+nnoremap <silent> <Leader>' :ToggleTerminal<Enter>
+tnoremap <silent> <Leader>' <C-\><C-n>:ToggleTerminal<Enter>
+" Make your life easier by mapping ESC in terminal mode. And if you use fzf, this will not break the ESC behaviour:
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
@@ -107,5 +105,3 @@ nnoremap U <C-r>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
-
-
