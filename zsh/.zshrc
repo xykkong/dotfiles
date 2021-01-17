@@ -54,6 +54,7 @@ antibody bundle romkatv/powerlevel10k
 
 alias vim='nvim'
 alias oldvim="\vim"
+alias myip='curl https://ipinfo.io/ip'
 
 . $HOME/.asdf/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh

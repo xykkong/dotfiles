@@ -1,12 +1,15 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["json", "markdown",  "yaml",  "json"],
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
-    }
-  }
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {}
+    }  
+  },
+ "suggest.enablePreview": true,
+ "suggest.timeout": 5000,
+ "yaml.format.enable": true,
+ "yaml.completion": true,
+ "diagnostic.displayByAle": true
 }
