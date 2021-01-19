@@ -1,0 +1,5 @@
+alias vim='nvim'
+alias oldvim="\vim"
+alias myip='curl https://ipinfo.io/ip'
+
+

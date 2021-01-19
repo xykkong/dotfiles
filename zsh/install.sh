@@ -4,7 +4,8 @@ src=$(pwd)
 dest=$HOME
 
 file1='.zshrc'
-file2='.zsh_plugins.txt'
+file2='.zsh_plugins'
+file3='.zsh_aliases'
 
 if [ ! -d $HOME/.asdf ]; then
   git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
@@ -16,3 +17,4 @@ fi
 
 ln -s $src/$file1 $dest/$file1
 ln -s $src/$file2 $dest/$file2
+ln -s $src/$file3 $dest/$file3

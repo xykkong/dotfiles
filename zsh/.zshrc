@@ -45,7 +45,7 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 source <(antibody init)
 
 # Plugins
-antibody bundle < ~/.zsh_plugins.txt
+antibody bundle < ~/.zsh_plugins
 
 # Themes
 antibody bundle romkatv/powerlevel10k
@@ -53,9 +53,7 @@ antibody bundle romkatv/powerlevel10k
 #antibody bundle mafredri/zsh-async
 #antibody bundle sindresorhus/pure
 
-alias vim='nvim'
-alias oldvim="\vim"
-alias myip='curl https://ipinfo.io/ip'
+source ~/.zsh_aliases
 
 . $HOME/.asdf/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh

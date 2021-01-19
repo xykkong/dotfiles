@@ -51,6 +51,8 @@ asdf plugin-add terraform-docs https://github.com/looztra/asdf-terraform-docs
 asdf plugin-add kubectl https://github.com/Banno/asdf-kubectl.git
 asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git
 asdf plugin-add helm-docs https://github.com/sudermanjr/asdf-helm-docs.git
+asdf plugin-add kind https://github.com/reegnz/asdf-kind.git
+
 
 # neovim
 sudo apt remove neovim
@@ -58,3 +60,16 @@ sudo apt remove vim
 asdf plugin-add neovim
 asdf install neovim stable
 asdf global neovim $(asdf list neovim)
+sudo apt install python3-pip
+npm install -g neovim
+pip3 install neovim
+
+
+# rust
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf install rust stable 
+asdf global rust stable 
+
+# FZF
+asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
+
