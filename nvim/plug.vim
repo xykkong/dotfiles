@@ -12,6 +12,15 @@ Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 
 """""" Helpers
+"Solid syntax and indentation support
+Plug 'sheerun/vim-polyglot'
+
+"Linter
+Plug 'dense-analysis/ale'
+
+"toggle terminal
+Plug 'caenrique/nvim-toggle-terminal'
+
 "Vim plugin that provides additional text objects
 Plug 'wellle/targets.vim'
 
@@ -48,14 +57,9 @@ Plug 'tpope/vim-unimpaired'
 "Code completion engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Solid syntax and indentation support
-Plug 'sheerun/vim-polyglot'
-
-"Linter
-Plug 'dense-analysis/ale'
-
 "expand similar abbreviations (HTML, CSS)
 Plug 'mattn/emmet-vim'
+
 
 "Asynchronous build and test dispatcher
 "Plug 'tpope/vim-dispatch'
@@ -109,11 +113,11 @@ Plug 'airblade/vim-gitgutter'     "Shows a git diff sign in the line
 Plug 'itchyny/vim-gitbranch'      "Show current branch
 Plug 'tpope/vim-fugitive' 		  "Git command
 
-"Terminal
+""""""Terminal
+Plug 'caenrique/nvim-toggle-terminal'
+Plug 'hkupty/nvimux'
 "Plug 'kassio/neoterm'
 "Plug 'benmills/vimux'
-Plug 'hkupty/nvimux'
 "Plug 'christoomey/vim-tmux-navigator'
-Plug 'caenrique/nvim-toggle-terminal'
 
 call plug#end()

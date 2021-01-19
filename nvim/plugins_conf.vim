@@ -141,7 +141,7 @@ nnoremap <Leader>/ :Ack!<Space>
 " COC
 " #############################################
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
+  "\ 'coc-snippets',
   \ 'coc-json',
   \ 'coc-yaml',
   \ 'coc-sh',

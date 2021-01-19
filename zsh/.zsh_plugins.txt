@@ -4,6 +4,7 @@ djui/alias-tips
 #robbyrussell/oh-my-zsh folder:plugins/git
 robbyrussell/oh-my-zsh folder:plugins/autojump
 #robbyrussell/oh-my-zsh folder:plugins/ssh-agent
+jeffreytse/zsh-vi-mode
 
 
 # ohmyzsh plugins
