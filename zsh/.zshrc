@@ -33,7 +33,7 @@ setopt hist_ignore_all_dups # remove older duplicate entries from history
 setopt hist_reduce_blanks # remove superfluous blanks from history items
 setopt inc_append_history # save history entries as soon as they are entered
 setopt share_history # share history between different instances
-setopt correct_all # autocorrect commands
+#setopt correct_all # autocorrect commands
 setopt interactive_comments # allow comments in interactive shells
 
 # Improve autocompletion style
@@ -56,10 +56,11 @@ antibody bundle romkatv/powerlevel10k
 source ~/.zsh_aliases
 
 . $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 . ~/.asdf/plugins/java/set-java-home.zsh
 
 # append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+#fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit
 compinit
