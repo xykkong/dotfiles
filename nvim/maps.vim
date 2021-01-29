@@ -58,6 +58,10 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Delete>
 
+" ZoomWinTab Plugin
+nnoremap <C-w>z :ZoomWinTabToggle<CR>
+nnoremap <C-w><C-z> :ZoomWinTabToggle<CR>
+
 " Terminal
 nnoremap <silent> <Leader>' :ToggleTerminal<Enter>
 tnoremap <silent> <Leader>' <C-\><C-n>:ToggleTerminal<Enter>

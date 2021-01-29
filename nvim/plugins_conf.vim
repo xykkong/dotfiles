@@ -166,6 +166,9 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected
 
 
+"ZoomWinTab
+let g:zoomwintab_remap = 0
+
 " #############################################
 "  NEOTERM
 " #############################################
