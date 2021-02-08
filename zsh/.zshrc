@@ -58,7 +58,7 @@ source ~/.zsh_aliases
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 . ~/.asdf/plugins/java/set-java-home.zsh
-poetry completions zsh > ~/.zfunc/_poetry
+#poetry completions zsh > ~/.zfunc/_poetry
 
 # append completions to fpath
 #fpath=(${ASDF_DIR}/completions $fpath)
