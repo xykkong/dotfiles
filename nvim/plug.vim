@@ -80,6 +80,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 
+Plug 'preservim/tagbar'
 
 """ Languages
 "Add snippets
