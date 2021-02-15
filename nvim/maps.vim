@@ -84,6 +84,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Redo
 nnoremap U <C-r>
 
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " Quick command mode
 "nnoremap <CR> :
 
