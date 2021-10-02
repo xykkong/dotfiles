@@ -9,9 +9,6 @@
   # Global gitignore rules
   excludesfile = ~/.gitignore_global
 
-  # Global gitattributes file
-  attributesFile = ~/.gitattributes
-
   # Better diff of changes
   # pager = diff-so-fancy | less --tabs=4 -RFX
 
