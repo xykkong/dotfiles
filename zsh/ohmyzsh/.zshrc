@@ -132,7 +132,7 @@ alias vi="lvim"
 alias vim="lvim"
 alias ohmyzsh="vi ${HOME}/.oh-my-zsh"
 alias zshconf="vi ${HOME}/.zshrc"
-alias nvimconf="vi $HOME}/.config/nvim/"
+alias nvimconf="vi ${HOME}/.config/nvim/init.vim"
 alias lvimconf="vi ${HOME}/.config/lvim/config.lua"
 alias tmuxconf="vi ${HOME}/.tmux.conf"
 
