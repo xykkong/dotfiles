@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,8 +15,8 @@ export ZSH="/Users/xiao/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # Set list of themes to pick from when loading at random
@@ -32,7 +39,8 @@ ZSH_THEME="robbyrussell"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=14
+#Automatic update without confirmation prompt:
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -72,7 +80,27 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf aws command-not-found copybuffer copydir copyfile docker fzf git history-substring-search iterm2 ripgrep vi-mode zoxide zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  asdf 
+  aws 
+  bgnotify
+  command-not-found 
+  copybuffer 
+  copydir 
+  copyfile 
+  docker 
+  fzf 
+  git 
+  history-substring-search 
+  iterm2 
+  macos
+  ripgrep 
+  vi-mode 
+  web-search
+  zoxide 
+  zsh-autosuggestions 
+  #zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,5 +127,25 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi="lvim"
+alias vim="lvim"
+alias ohmyzsh="vi ${HOME}/.oh-my-zsh"
+alias zshconf="vi ${HOME}/.zshrc"
+alias nvimconf="vi $HOME}/.config/nvim/"
+alias lvimconf="vi ${HOME}/.config/lvim/config.lua"
+alias tmuxconf="vi ${HOME}/.tmux.conf"
+
+export PATH="$PATH:${HOME}/.local/bin"
+export PATH="$PATH:${HOME}/Documents/scripts"
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

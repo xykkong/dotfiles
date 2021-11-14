@@ -105,7 +105,7 @@ nnoremap \ :Rg<space>           " Search whole project
 " #############################################
 "let NERDTreeShowHidden=1      "Show hidden files
 let g:NERDSpaceDelims=1        "Add a space before and after delimeters
-map <C-n> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 "let NERDTreeShowHidden=1      "Show hidden files
 
 

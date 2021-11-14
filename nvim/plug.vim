@@ -25,7 +25,8 @@ Plug 'caenrique/nvim-toggle-terminal'
 Plug 'wellle/targets.vim'
 
 "Multiple lines comments
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
+"Plug 'preservim/nerdcommenter'
 
 "Vim sugar for the UNIX shell commands that need it the most
 Plug 'tpope/vim-eunuch'

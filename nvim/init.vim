@@ -77,10 +77,9 @@ set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
 set cpoptions+=$					  "put a '$' at the end of the changed text
 set mouse=a                           "enable mouse support
 
+"colorscheme solarized
 colorscheme sonokai
 set background=dark
-"set background=dark
-"colorscheme solarized
 "let g:solarized_termcolors=256
 
 

@@ -26,14 +26,14 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
+"nnoremap p p=`]<C-o>
+"nnoremap P P=`]<C-o>
 
 " Quit normal mode
 nnoremap <Leader>q  :q<CR>
 nnoremap <Leader>Q  :qa!<CR>
 
-"Remap the ESC Key
+"Remap the ESC Key in insert mode
 inoremap jk <ESC>
 
 " Insert mode shortcut
@@ -42,7 +42,7 @@ inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-"Bash like
+"Bash like shortcut
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-d> <Delete>
@@ -53,7 +53,7 @@ cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
-"Bash like
+"Bash like shortcut
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Delete>
@@ -81,8 +81,8 @@ vnoremap > >gv
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-" Redo
-nnoremap U <C-r>
+"Redo
+"nnoremap U <C-r>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -111,4 +111,4 @@ nmap <F8> :TagbarToggle<CR>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command! W w !sudo tee % > /dev/null
+"command! W w !sudo tee % > /dev/null
