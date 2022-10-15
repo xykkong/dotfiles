@@ -1,12 +1,11 @@
 #!/bin/bash
 
 src=$(pwd)
-dest=$HOME/.config/nvim
+dest=$HOME/.config/lf/
 
-files=("init.vim" "maps.vim" "plug.vim" "coc-settings.json" "plugins_conf.vim")
+files=("lfrc" "icons_export")
 
 mkdir -p $dest
-
 for file in ${files[@]}; do
   ln -fs $src/$file $dest/$file
 done

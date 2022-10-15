@@ -82,12 +82,13 @@ export UPDATE_ZSH_DAYS=14
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   # alias-finder
-  asdf 
+  # using asdf script instead
+  asdf
   aws 
   bgnotify
   command-not-found 
   copybuffer 
-  copydir 
+  copypath
   copyfile 
   docker 
   fzf 
@@ -104,6 +105,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/aliases.zsh
 
 # User configuration
 
@@ -127,53 +129,12 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias vi="lvim"
-alias vim="lvim"
-alias ohmyzsh="vi ${HOME}/.oh-my-zsh"
-alias zshconf="vi ${HOME}/.zshrc"
-alias nvimconf="vi ${HOME}/.config/nvim/init.vim"
-alias lvimconf="vi ${HOME}/.config/lvim/config.lua"
-alias tmuxconf="vi ${HOME}/.tmux.conf"
 
-# ----------------------
-# Git Aliases
-# ----------------------
-alias ga='git add'
-alias gaa='git add --all'
-alias gau='git add --update'
-alias gb='git branch'
-alias gbd='git branch --delete '
-alias gc='git commit'
-alias gcm='git commit --message'
-alias gcf='git commit --fixup'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gcom='git checkout master'
-alias gd='git diff'
-alias gdh='git diff HEAD'
-alias gi='git init'
-alias glg='git log --graph --oneline --decorate --all'
-alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
-alias gm='git merge --no-ff'
-alias gma='git merge --abort'
-alias gmc='git merge --continue'
-alias gp='git pull'
-alias gpr='git pull --rebase'
-alias gr='git rebase'
-alias gs='git status'
-alias gss='git status --short'
-alias gst='git stash'
-alias gsta='git stash apply'
-alias gstd='git stash drop'
-alias gstl='git stash list'
-alias gstp='git stash pop'
-alias gsts='git stash save'
 
-export PATH="$PATH:${HOME}/.local/bin"
-export PATH="$PATH:${HOME}/Documents/scripts"
 
 NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:${HOME}/.local/bin"
+export PATH="$PATH:${HOME}/Documents/scripts"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 
 # Preserve MANPATH if you already defined it somewhere in your config.
@@ -184,3 +145,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

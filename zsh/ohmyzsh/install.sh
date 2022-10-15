@@ -1,12 +1,15 @@
 #!/bin/bash
 
 src=$(pwd)
-dest=$HOME
+dest=$HOME/.oh-my-zsh/
 
-file1='.zshrc'
+files=(".zshrc" "aliases.zsh")
 
 if [ ! -d $HOME/.asdf ]; then
-  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.9.0
 fi
 
-ln -s $src/$file1 $dest/$file1
+mkdir -p $dest
+for file in ${files[@]}; do
+  ln -fs $src/$file $dest/$file
+done

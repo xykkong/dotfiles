@@ -8,7 +8,7 @@ file2='.zsh_plugins'
 file3='.zsh_aliases'
 
 if [ ! -d $HOME/.asdf ]; then
-  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.9.0
 fi
 
 if [ ! -f '/usr/local/bin/antibody' ]; then

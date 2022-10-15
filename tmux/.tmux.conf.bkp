@@ -194,35 +194,43 @@ bind -T copy-mode-vi 'l'              send-keys -X cursor-up
 bind -T copy-mode-vi 'ç'              send-keys -X cursor-right
 
 
-# Plugins
-set -g @tpm_plugins "                 \
-  tmux-plugins/tpm                    \
-  tmux-plugins/tmux-resurrect         \
-  tmux-plugins/tmux-continuum         \
-  tmux-plugins/Tmux-yank              \
-  tmux-plugins/tmux-copycat           \
-  tmux-plugins/tmux-prefix-highlight  \ 
-  wfxr/tmux-power                     \
-"
+# color scheme (styled as vim-powerline)
+# set -g status-left-length 52
+# set -g status-right-length 451
+# set -g status-style fg=white,bg=colour234
+# set -g pane-border-style fg=colour245
+# set -g pane-active-border-style fg=colour39
+# set -g message-style fg=colour16,bg=colour221,bold
+# set -g status-left '#[fg=colour235,bg=colour252,bold] ❐ #S #[fg=colour252,bg=colour238,nobold]⮀#[fg=colour245,bg=colour238,bold] #(whoami) #[fg=colour238,bg=colour234,nobold]⮀'
+# set -g window-status-format '#[fg=colour235,bg=colour252,bold] #I #(pwd="#{pane_current_path}"; echo ${pwd####*/}) #W '
+# set -g window-status-current-format '#[fg=colour234,bg=colour39]⮀#[fg=black,bg=colour39,noreverse,bold] #{?window_zoomed_flag,#[fg=colour228],} #I #(pwd="#{pane_current_path}"; echo ${pwd####*/}) #W #[fg=colour39,bg=colour234,nobold]⮀'
+# set-option -g status-interval 2
 
-# set -g @plugin 'tmux-plugins/tmux-sensible'
-# set -g @plugin 'tmux-plugins/tmux-online-status'
+
+# Plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-yank'
 # set -g @plugin 'tmux-plugins/tmux-battery'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
 # set -g @plugin 'tmux-plugins/tmux-open'
 # set -g @plugin 'sainnhe/tmux-fzf'
-
 #Normal Mode
 #    prefix–y — copies text from the command line to the clipboard.
 #    prefix–Y — copy the current pane's current working directory to the clipboard.
 #Copy Mode
 #    y — copy selection to system clipboard.
 #    Y (shift-y) — "put" selection. Equivalent to copying a selection, and pasting it to the command line.
+set -g @plugin 'wfxr/tmux-power'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 #prefix + Ctrl-s - save
 #prefix + Ctrl-r - restore
+set -g @plugin 'tmux-plugins/tmux-copycat'
 #prefix + / - regex search (strings work too)
 
 set -g @tmux_power_theme 'moon'
 
+#set -g status-right '#{prefix_highlight} | %a %Y-%m-%d %H:%M'
 set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_show_sync_mode 'on'
 
@@ -234,3 +242,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
 run '~/.tmux/plugins/tpm/tpm'
+
+# Local config
+#if-shell "[ -f ~/.tmux.conf.local ]" 'source ~/.tmux.conf.local'
+#source ~/.tmux.conf.local
