@@ -1,0 +1,62 @@
+# Run brew bundle
+
+# 'brew tap'
+tap "federico-terzi/espanso"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "jesseduffield/lazygit"
+
+# 'brew install'
+brew "bat"
+brew "coreutils"
+brew "cask"
+brew "exa"
+brew "fd"
+brew "flux", link: false
+brew "fzf"
+brew "gh"
+brew "httpie"
+brew "inetutils"
+brew "jq"
+brew "lazydocker"
+brew "lazygit"
+brew "mas"
+brew "navi"
+brew "neovim", args: ["HEAD"]
+brew "podman"
+brew "reattach-to-user-namespace"
+brew "ripgrep"
+brew "stow"
+brew "terminal-notifier"
+brew "terraform"
+brew "thefuck"
+brew "tldr"
+brew "watch"
+brew "zoxide"
+
+# 'brew install --cask'
+cask "alfred"
+cask "brave-browser"
+cask "docker"
+cask "dozer"
+cask "finicky"
+cask "flux"
+cask "kitty"
+cask "meetingbar"
+cask "slack"
+cask "spotify"
+cask "steam"
+cask "telegram"
+cask "transmission"
+cask "visual-studio-code"
+cask "vlc"
+cask "zoom"
+
+# 'mas install'
+mas "Clocker", id: 1056643111
+mas "Spark", id: 1176895641
+mas "Tailscale", id: 1475387142

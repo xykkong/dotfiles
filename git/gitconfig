@@ -1,17 +1,15 @@
 # set your user tokens as environment variables, such as ~/.secrets
 [include]
-  path = ~/.gitconfig_alias
+  path = ~/.gitalias
 
 [core]
   autocrlf = false
-  editor = nvim
-
+  editor = lvim
+   # Better diff of changes
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  ; pager = delta
   # Global gitignore rules
-  excludesfile = ~/.gitignore_global
-
-  # Better diff of changes
-  # pager = diff-so-fancy | less --tabs=4 -RFX
-
+	excludesfile = /Users/xiaokong/.gitignore_global
 [color]
   ui = true
 [color "branch"]
@@ -23,14 +21,27 @@
   frag = magenta bold
   old = red
   new = green
+; [delta]
+;     navigate = true    # use n and N to move between diff sections
+;     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[diff]
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+  # instead of a/b/c/d as prefixes for patches
+  colorMoved = default
+  mnemonicprefix = true
+  algorithm = patience
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+[interactive]
+;     diffFilter = delta --color-only
+  diffFilter = diff-so-fancy --patch
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]
   cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [merge]
+  ; conflictstyle = diff3
   summary = true
   verbosity = 1
   tool = mvimdiff
@@ -41,16 +52,16 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = upstream
+	default = current
 [advice]
   statusHints = false
-[diff]
-  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
-  # instead of a/b/c/d as prefixes for patches
-  mnemonicprefix = true
-  algorithm = patience
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
 
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

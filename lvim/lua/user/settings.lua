@@ -7,27 +7,40 @@ lvim.colorscheme = "onedarker"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
+
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 --lvim.builtin.indentlines.active = true
+
+lvim.builtin.terminal.active = true
+
+lvim.builtin.which_key.mappings["t"] = { "<cmd>ToggleTerm direction=horizontal size=20<CR>", "Terminal" }
+-- lvim.builtin.which_key.mappings["t"] = {
+--   name = "+Terminal",
+--   f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
+--   v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
+--   h = { "<cmd>2ToggleTerm size=30 direction=horizontal<cr>", "Split horizontal" },
+-- }
+
+lvim.builtin.which_key.mappings["F"] = { "<cmd>Telescope find_files<CR>", "Find Files" }
+lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope grep_string<CR>", "Find in Files" }
+lvim.builtin.which_key.mappings["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy find" }
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
---  "c",
---  "css",
+  "c",
+  "css",
   "elixir",
---  "go",
+  "go",
   "java",
   "javascript",
   "json",
---  "lua",
+  "lua",
   "python",
---  "rust",
---  "tsx",
---  "typescript",
+  "rust",
+  "tsx",
+  "typescript",
   "yaml",
 }
 

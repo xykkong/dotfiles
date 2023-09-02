@@ -9,10 +9,10 @@ dest=$HOME
 # ln -s $src/$file1 $dest/$file1
 # ln -s $src/$file2 $dest/$file2
 
-files=(".tmux.conf")
+files=("tmux.conf")
 
 mkdir -p $dest
 
 for file in ${files[@]}; do
-  ln -fs $src/$file $dest/$file
+  ln -fs $src/$file $dest/.$file
 done

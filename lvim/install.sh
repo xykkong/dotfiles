@@ -1,6 +1,14 @@
 #!/bin/bash
 
-src=$PWD
-dest=$HOME/.config/
+src=$(pwd)
+dest=$HOME/.config/lvim
 
-ln -s $src/lvim $dest/lvim
+files=("config.lua" "lua")
+
+mkdir -p $dest
+
+for file in ${files[@]}; do
+  ln -fs $src/$file $dest/$file
+  echo "Symbolic Link created $dest/$file -> $src/$file"
+done
+

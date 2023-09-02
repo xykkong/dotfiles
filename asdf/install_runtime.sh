@@ -23,7 +23,6 @@ asdf global maven $(asdf list maven)
 asdf plugin-add python
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
-
 #golang
 sudo apt remove golang-go
 sudo apt remove golang
@@ -34,18 +33,11 @@ asdf global golang $(asdf list golang)
 # ruby
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
-
-# google cloud
-asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git
-asdf install gcloud latest
-asdf global gcloud $(asdf list gcloud)
-
 #terraform
 asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
 asdf plugin-add terraform-lsp https://github.com/bartlomiejdanek/asdf-terraform-lsp.git
 asdf plugin-add terraform-validator https://github.com/looztra/asdf-terraform-validator
 asdf plugin-add terraform-docs https://github.com/looztra/asdf-terraform-docs
-
 
 # kubernetes
 asdf plugin-add kubectl https://github.com/Banno/asdf-kubectl.git
@@ -53,23 +45,9 @@ asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git
 asdf plugin-add helm-docs https://github.com/sudermanjr/asdf-helm-docs.git
 asdf plugin-add kind https://github.com/reegnz/asdf-kind.git
 
-
-# neovim
-sudo apt remove neovim
-sudo apt remove vim
-asdf plugin-add neovim
-asdf install neovim stable
-asdf global neovim $(asdf list neovim)
-sudo apt install python3-pip
-npm install -g neovim
-pip3 install neovim
-
-
 # rust
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf install rust stable 
 asdf global rust stable 
 
-# FZF
-asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
 

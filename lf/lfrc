@@ -1,6 +1,0 @@
-set ratios '1:3'
-set hidden false
-set ignorecase true
-
-# Basic Functions
-map <esc> quit
