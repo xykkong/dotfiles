@@ -1,18 +1,19 @@
 # ----------------------
 # General Aliases
 # ----------------------
-alias vi=lvim
-alias vim=lvim
+alias ..='cd ..'
+alias ...='cd ../..'
+alias vi=nvim
+alias vim=nvim
 alias find=fd
 alias cat=bat
 alias grep=rg
 alias tree=broot
-alias dc="docker compose"
+# alias dc="docker compose"
 # alias docker=podman
 # alias docker-compose=podman-compose
+# alias docker-machine="podman machine"
 alias mkdir='mkdir -p'
-alias ..='cd ..'
-alias ...='cd ../..'
 alias ohmyzsh="vi ${HOME}/.oh-my-zsh"
 alias zshconf="vi ${HOME}/.zshrc"
 alias zshalias="vi ${HOME}/.zsh_aliases"
@@ -21,10 +22,10 @@ alias nvimconf="vi ${HOME}/.config/nvim/init.vim"
 alias lvimconf="vi ${HOME}/.config/lvim/config.lua"
 alias tmuxconf="vi ${HOME}/.tmux.conf"
 
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    #alias ls='exa -lag --header'
-    alias la="exa --long --all --group"
+if [ -x "$(command -v eza)" ]; then
+    alias ls="eza"
+    #alias ls='eza -lag --header'
+    alias la="eza --long --all --group"
 fi
 #
 # ----------------------
