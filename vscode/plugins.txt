@@ -1,0 +1,11 @@
+Python
+Prettier
+GitLens
+Git History
+JavaScript Code Snippets
+indent-rainbow
+Code Spell Checker
+TODO Highlight
+Intellicode
+YAML
+Error Lens

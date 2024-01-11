@@ -2,82 +2,111 @@
 
 # 'brew tap'
 # tap "federico-terzi/espanso"
-tap "homebrew/core"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
+#tap "homebrew/core"
+#tap "homebrew/bundle"
+#tap "homebrew/cask"
+#tap "homebrew/cask-fonts"
+#tap "homebrew/cask-versions"
+#tap "homebrew/services"
 
 # 'brew install'
 # brew "docker"
 # brew "docker-compose"
 # brew "podman"
 # brew "podman-compose"
+
 brew "asdf"
 # brew "aws-vault"
 brew "awscli"
-brew "bat"
 # brew "coreutils"
-# brew "cask"
 brew "direnv"
-brew "eza"
-brew "fd"
 # brew "fzf"
 brew "gh"
-# brew "httpie"
+brew "httpie"
 brew "jq"
-# brew "lazydocker"
+brew "lazydocker"
 brew "lazygit"
 # brew "lf"
 # brew "mas"
-brew "mcfly"
-# brew "navi"
+brew "navi"
 brew "neovim"
-brew "podman"
 # brew "reattach-to-user-namespace"
-brew "ripgrep"
 # brew "terminal-notifier"
-# brew "thefuck"
-# brew "tldr"
+brew "thefuck"
 brew "tmux"
 # brew "watch"
 brew "wget"
+
+# cat
+brew "bat"
+# top
+brew "bottom"
+#du
+brew "dust"
+# ls
+brew "eza"
+# find
+brew "fd"
+# git diff
+brew "git-delta"
+# reverse search
+brew "mcfly"
+# ps
+brew "procs"
+# grep
+brew "ripgrep"
+# tldr
+brew "tealdeer"
+# cd
 brew "zoxide"
 
-# cask "alfred"
+
 # 'brew install --cask <package>'
-# cask "raycast"
+
+# cask "alfred"
+cask "raycast"
+
 # cask "alacritty"
 # cask "iterm2"
-cask "discord"
 cask "kitty"
+
+# cask "flycut"
+# cask "maccy"
+
+# cask "insomnia"
+# cask "postman"
+
+cask "craft"
+# cask "notion"
+
 # cask "appcleaner"
 cask "brave-browser"
 # cask "bitwarden"
 # cask "clocker"
+cask "cron"
 cask "datagrip"
-# cask "docker"
-# cask "dozer"
+cask "discord"
+cask "docker"
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono-nerd-font"
 cask "font-hack-nerd-font"
-# cask "flycut"
 cask "github"
 cask "google-chrome"
+cash "hiddenbar"
 # cask "keka"
 # cask "kekaexternalhelper"
-# cask "meetingbar"
+cask "meetingbar"
 # cask "iina"
-cask "openwebstart"  #support old version java
-# cask "postman"
+# cask "itsycal"
+# cask "openwebstart"  #support old version java
 cask "rectangle"
-# cask "slack"
+cask "slack"
 cask "spotify"
 cask "sublime-text"
 cask "stats"
-cask "steam"
+# cask "steam"
 cask "telegram"
+cask "vincelwt-chatgpt"
 cask "visual-studio-code"
 cask "whatsapp"
 cask "zoom"
@@ -86,3 +115,4 @@ cask "zoom"
 # mas "Tailscale", id: 1475387142
 # mas "befocused"
 # mas "dropover"
+# mas "dato"
