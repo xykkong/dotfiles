@@ -71,7 +71,7 @@ cask "raycast"
 cask "kitty"
 
 # cask "flycut"
-# cask "maccy"
+cask "maccy"
 
 # cask "insomnia"
 # cask "postman"
