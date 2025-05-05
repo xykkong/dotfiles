@@ -1,118 +1,130 @@
-# Run brew bundle
+# brew => 'brew install <package>'
+# cask => 'brew install --cask <package>'
+# mas => 'mas install <package>'
 
-# 'brew tap'
-# tap "federico-terzi/espanso"
-#tap "homebrew/core"
-#tap "homebrew/bundle"
-#tap "homebrew/cask"
-#tap "homebrew/cask-fonts"
-#tap "homebrew/cask-versions"
-#tap "homebrew/services"
-
-# 'brew install'
 # brew "docker"
+# cask "docker"
+# brew "docker-buildx"
 # brew "docker-compose"
+
 # brew "podman"
 # brew "podman-compose"
+# cask "podman-desktop"
+
+# brew zsh-autosuggestions
+# brew zsh-autocomplete
+# brew zsh-syntax-highlighting
 
 brew "asdf"
 # brew "aws-vault"
 brew "awscli"
 # brew "coreutils"
 brew "direnv"
-# brew "fzf"
+brew "fzf"
 brew "gh"
-brew "httpie"
+#brew "httpie"
 brew "jq"
 brew "lazydocker"
 brew "lazygit"
-# brew "lf"
 # brew "mas"
-brew "navi"
+# brew "navi"
 brew "neovim"
 # brew "reattach-to-user-namespace"
 # brew "terminal-notifier"
-brew "thefuck"
+# brew "thefuck"
 brew "tmux"
 # brew "watch"
 brew "wget"
 
-# cat
+## cat
 brew "bat"
-# top
-brew "bottom"
-#du
-brew "dust"
-# ls
+## top
+# brew "bottom"
+## du
+# brew "dust"
+## ls
 brew "eza"
-# find
+## find
 brew "fd"
-# git diff
+## git diff
 brew "git-delta"
-# reverse search
+## reverse search
 brew "mcfly"
-# ps
-brew "procs"
-# grep
+## ps
+# brew "procs"
+## grep
 brew "ripgrep"
-# tldr
+## tldr
 brew "tealdeer"
-# cd
+## cd
 brew "zoxide"
 
-
-# 'brew install --cask <package>'
-
 # cask "alfred"
+# cask "monarch"
 cask "raycast"
 
+## Terminal
 # cask "alacritty"
 # cask "iterm2"
-cask "kitty"
+# cask "kitty"
+# cask "warp"
+# cask "wezterm"
+cask "ghostty"
 
 # cask "flycut"
 cask "maccy"
 
 # cask "insomnia"
 # cask "postman"
+cask "hoppscotch"
 
-cask "craft"
+# cask "craft"
 # cask "notion"
 
-# cask "appcleaner"
-cask "brave-browser"
-# cask "bitwarden"
-# cask "clocker"
-cask "cron"
-cask "datagrip"
-cask "discord"
-cask "docker"
+# cask "sublime-text"
+cask "zed"
+
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono-nerd-font"
 cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+
+# cask "gitkraken"
+# cask "fork"
 cask "github"
+
+# cask "itsycal"
+# mas "dato"
+cask "meetingbar"
+
+cask "aldente"
+# cask "appcleaner"
+cask "brave-browser"
+# cask "bitwarden"
+cask "chatgpt"
+# cask "clocker"
+# cask "cron"
+cask "datagrip"
+# cask "discord"
+cask "espanso"
 cask "google-chrome"
 cash "hiddenbar"
-# cask "keka"
+cask "keka"
 # cask "kekaexternalhelper"
-cask "meetingbar"
 # cask "iina"
-# cask "itsycal"
 # cask "openwebstart"  #support old version java
-cask "rectangle"
+# cask "rectangle"
 cask "slack"
 cask "spotify"
-cask "sublime-text"
-cask "stats"
+# cask "stats"
 # cask "steam"
 cask "telegram"
-cask "vincelwt-chatgpt"
 cask "visual-studio-code"
 cask "whatsapp"
 cask "zoom"
 
-# 'mas install'
+
 # mas "Tailscale", id: 1475387142
 # mas "befocused"
 # mas "dropover"
-# mas "dato"
+
