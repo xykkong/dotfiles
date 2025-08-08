@@ -2,10 +2,11 @@
 # cask => 'brew install --cask <package>'
 # mas => 'mas install <package>'
 
-# brew "docker"
-# cask "docker"
-# brew "docker-buildx"
-# brew "docker-compose"
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+
+brew "colima"
 
 # brew "podman"
 # brew "podman-compose"
@@ -14,12 +15,13 @@
 # brew zsh-autosuggestions
 # brew zsh-autocomplete
 # brew zsh-syntax-highlighting
+brew "saml2aws"
+brew "zimfw"
 
 brew "asdf"
 # brew "aws-vault"
 brew "awscli"
-# brew "coreutils"
-brew "direnv"
+# brew "direnv"
 brew "fzf"
 brew "gh"
 #brew "httpie"
@@ -27,7 +29,7 @@ brew "jq"
 brew "lazydocker"
 brew "lazygit"
 # brew "mas"
-# brew "navi"
+brew "navi"
 brew "neovim"
 # brew "reattach-to-user-namespace"
 # brew "terminal-notifier"
@@ -39,7 +41,7 @@ brew "wget"
 ## cat
 brew "bat"
 ## top
-# brew "bottom"
+brew "bottom"
 ## du
 # brew "dust"
 ## ls
@@ -51,12 +53,12 @@ brew "git-delta"
 ## reverse search
 brew "mcfly"
 ## ps
-# brew "procs"
+brew "procs"
 ## grep
 brew "ripgrep"
 ## tldr
 brew "tealdeer"
-## cd
+## cd  setup: https://github.com/ajeetdsouza/zoxide
 brew "zoxide"
 
 # cask "alfred"
@@ -74,15 +76,16 @@ cask "ghostty"
 # cask "flycut"
 cask "maccy"
 
+#cask "hoppscotch"
 # cask "insomnia"
-# cask "postman"
-cask "hoppscotch"
+cask "postman"
 
 # cask "craft"
 # cask "notion"
+cask "obsidian"
 
-# cask "sublime-text"
-cask "zed"
+cask "sublime-text"
+# cask "zed"
 
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono-nerd-font"
@@ -97,9 +100,12 @@ cask "github"
 # mas "dato"
 cask "meetingbar"
 
+cask "arc"
+cask "brave-browser"
+cask "google-chrome"
+
 cask "aldente"
 # cask "appcleaner"
-cask "brave-browser"
 # cask "bitwarden"
 cask "chatgpt"
 # cask "clocker"
@@ -107,7 +113,6 @@ cask "chatgpt"
 cask "datagrip"
 # cask "discord"
 cask "espanso"
-cask "google-chrome"
 cash "hiddenbar"
 cask "keka"
 # cask "kekaexternalhelper"
@@ -123,7 +128,7 @@ cask "visual-studio-code"
 cask "whatsapp"
 cask "zoom"
 
-
+#
 # mas "Tailscale", id: 1475387142
 # mas "befocused"
 # mas "dropover"
