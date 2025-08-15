@@ -1,0 +1,61 @@
+alias myip='curl https://ipinfo.io/ip'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias vim=nvim
+alias find=fd
+alias cat=bat
+alias grep=rg
+alias ps=procs
+alias top=btm
+alias ls=eza
+alias la="eza --long --all --group"
+alias ldocker=lazydocker
+alias lgit=lazygit
+alias python=python3
+alias pip=pip3
+alias tf=terraform
+
+#
+# ----------------------
+# Git Aliases
+# ----------------------
+alias ga='git add'
+alias gaa='git add --all'
+alias gau='git add --update'
+alias gb='git branch'
+alias gbd='git branch --delete'
+alias gc='git commit --message'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcom='git checkout master'
+alias gd='git diff'
+alias gdh='git diff HEAD'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --prettyformat:"%h %ad %s" --date=short --all'
+alias gm='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'
+
+# ----------------------
+# Functions
+# ----------------------
+gitpromote() { 
+   git fetch && git checkout ${2} && git pull && git merge origin/${1} && git push; 
+}
+# gc() { git commit -m "$@"; }
+# gco() { git checkout "$@"; }
+# gs() { git switch "$@"; }
+# gpo() { git pull origin "$@"; }
+# gpu() { git push "$@";}
+

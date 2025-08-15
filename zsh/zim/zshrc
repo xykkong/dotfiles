@@ -1,0 +1,41 @@
+# -----------------
+# Zsh configuration
+# -----------------
+#
+# History
+#
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
+#
+# Input/output
+#
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -v
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+
+ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source /opt/homebrew/opt/zimfw/share/zimfw.zsh init
+fi
+
+
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+source $HOME/.zsh_aliases
+
+eval "$(zoxide init zsh)"
+eval "$(mcfly init zsh)"
+eval $(thefuck --alias)
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
+export JAVA_HOME="/Users/xiao.kong/Library/Java/JavaVirtualMachines/temurin-21.0.8/Contents/Home"
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+export AWS_PROFILE=saml2aws
+
+# Created by `pipx` on 2025-08-11 10:00:46
+export PATH="$PATH:/Users/xiao.kong/.local/bin"
+
