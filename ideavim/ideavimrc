@@ -1,0 +1,95 @@
+set clipboard=unnamedplus         " Uses the macOS clipboard
+set ignorecase                    " Case-insensitive search...
+set smartcase                     " ...unless search has uppercase
+"set incsearch                     " Show matches as you type
+set hlsearch                      " Highlight search matches
+set number                        " Show line numbers
+set relativenumber                " Relative numbers for easy navigation
+set scrolloff=5                   " Keep 5 lines visible above/below cursor
+set wrap                          " Wrap long lines (toggle with :set nowrap)
+set showmode                      " Show current mode (Insert, Normal, etc.)
+
+
+" =========
+" Extensions
+" =========
+set surround              " add/change/delete surroundings. Commands: ys, cs, ds, S.
+set commentary            " gc to (un)comment
+set highlightedyank       " flash what you yanked
+"set exchange              " cx to swap text objects
+"set ReplaceWithRegister   " gr{motion} to replace with register
+"set textobj-entire        " ae/ie select entire file
+set multiple-cursors
+set NERDTree
+
+" --- Motion booster
+set sneak
+set easymotion            " requires IdeaVim-EasyMotion plugin
+
+
+" =========
+" MAPPING
+" =========
+let mapleader=" "                 " Space as leader key
+
+nnoremap Y y$                     " Yank to end of line with Y (like D and C)
+
+" Keep search matches centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" =========
+" NAVIGATION
+" =========
+" Move between editor tabs
+nmap <leader>1 1gt
+nmap <leader>2 2gt
+nmap <leader>3 3gt
+nmap <leader>4 4gt
+nmap <leader>5 5gt
+
+" Move between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+
+"--- IDE INTEGRATION ----
+nnoremap <leader>r          :action Run<CR>
+nnoremap <leader>d          :action Debug<CR>
+nnoremap <leader>f          :action Find<CR>
+nnoremap <leader>p          :action ShowProjectStructureSettings<CR>
+
+" Go to declaration
+nnoremap <leader>gd         :action GotoDeclaration<CR>
+
+" Go to implementation
+nnoremap <leader>gi         :action GotoImplementation<CR>
+
+" Go to type declaration
+nnoremap <leader>gt         :action GotoTypeDeclaration<CR>
+
+" Rename symbol
+nnoremap <leader>re         :action RenameElement<CR>
+
+" Show usages for symbol
+nnoremap <leader>su         :action ShowUsages<CR>
+
+" Find usages for symbol
+nnoremap <leader>fu         :action FindUsages<CR>
+
+" Open terminal in project root
+"map <leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t          :action ActivateTerminalToolWindow<CR>
+
+" Maximize coding area (hide all tool windows)
+nnoremap <leader>m          :action HideAllToolWindows<CR>
+nnoremap <leader>M          :action ToggleMaximizeEditor<CR>
+
+nnoremap <leader><leader> <Plug>(easymotion-s)
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
+
+nnoremap <C-p>              :NERDTreeToggle<CR>
+nnoremap <leader>n          :NERDTreeFind<CR>
