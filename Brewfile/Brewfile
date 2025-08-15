@@ -11,16 +11,21 @@ brew "colima"
 # brew "podman"
 # brew "podman-compose"
 # cask "podman-desktop"
+# cask "rancher"
 
 # brew zsh-autosuggestions
 # brew zsh-autocomplete
 # brew zsh-syntax-highlighting
-brew "saml2aws"
 brew "zimfw"
-
+## cd  setup: https://github.com/ajeetdsouza/zoxide
+brew "zoxide"
 brew "asdf"
+
 # brew "aws-vault"
 brew "awscli"
+brew "saml2aws"
+
+
 # brew "direnv"
 brew "fzf"
 brew "gh"
@@ -31,6 +36,7 @@ brew "lazygit"
 # brew "mas"
 brew "navi"
 brew "neovim"
+brew "pipx"
 # brew "reattach-to-user-namespace"
 # brew "terminal-notifier"
 # brew "thefuck"
@@ -58,8 +64,6 @@ brew "procs"
 brew "ripgrep"
 ## tldr
 brew "tealdeer"
-## cd  setup: https://github.com/ajeetdsouza/zoxide
-brew "zoxide"
 
 # cask "alfred"
 # cask "monarch"
@@ -100,20 +104,20 @@ cask "github"
 # mas "dato"
 cask "meetingbar"
 
-cask "arc"
-cask "brave-browser"
 cask "google-chrome"
+cask "arc"
+# cask "brave-browser"
 
 cask "aldente"
 # cask "appcleaner"
-# cask "bitwarden"
+cask "bitwarden"
 cask "chatgpt"
 # cask "clocker"
 # cask "cron"
 cask "datagrip"
 # cask "discord"
 cask "espanso"
-cash "hiddenbar"
+cask "hiddenbar"
 cask "keka"
 # cask "kekaexternalhelper"
 # cask "iina"

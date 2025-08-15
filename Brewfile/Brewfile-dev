@@ -1,0 +1,10 @@
+
+cask "aws-vpn-client"
+cask "android-studio"
+cask "proxyman"
+cask "intellij-idea"
+cask "datagrip"
+
+brew "android-platform-tools"
+brew "terraform"
+brew "tflint"
